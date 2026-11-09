@@ -1,0 +1,71 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "MP-SEH-ICH-01",
+        "name": "Bijori",
+        "district": "Sehore",
+        "block": "Ichhawar"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [77.0012, 22.9712],
+            [77.0238, 22.9725],
+            [77.0267, 22.9892],
+            [77.0145, 22.9945],
+            [76.9982, 22.9845],
+            [77.0012, 22.9712]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "MP-SEH-ICH-02",
+        "name": "Diwadia",
+        "district": "Sehore",
+        "block": "Ichhawar"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [76.9821, 23.0012],
+            [77.0045, 23.0034],
+            [77.0089, 23.0212],
+            [76.9934, 23.0245],
+            [76.9791, 23.0134],
+            [76.9821, 23.0012]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "MP-SEH-ASH-01",
+        "name": "Kothri Kalan",
+        "district": "Sehore",
+        "block": "Ashta"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [76.8012, 23.0056],
+            [76.8245, 23.0078],
+            [76.8289, 23.0298],
+            [76.8112, 23.0312],
+            [76.7981, 23.0189],
+            [76.8012, 23.0056]
+          ]
+        ]
+      }
+    }
+  ]
+}

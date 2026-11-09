@@ -1,0 +1,90 @@
+================================================================================
+GRAMCRAFT - COMPLETE SETUP COMMANDS EXECUTION GUIDE
+================================================================================
+
+--------------------------------------------------------------------------------
+PART A: WINDOWS POWERSHELL SETUP COMMANDS
+--------------------------------------------------------------------------------
+
+# 1. Open Windows PowerShell as Administrator (if setting ExecutionPolicy):
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+# 2. Verify prerequisites:
+node -v
+npm -v
+python --version
+
+# 3. Setup Python ML Intelligence Service:
+cd ml-service
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+python -m pytest
+# Keep this terminal open or start the ML service:
+python -m app.__init__
+# (ML Service is now running on http://localhost:5001)
+
+# 4. In a SECOND Terminal, setup API Gateway:
+cd api-gateway
+Copy-Item .env.example .env
+npm install
+# Seed the database with 30 villages, 8 quarters of history, users & projects:
+npm run seed
+# Run tests:
+npm test
+# Start API Gateway:
+npm run dev
+# (API Gateway is now running on http://localhost:5000, Docs at /docs)
+
+# 5. In a THIRD Terminal, setup Frontend:
+cd frontend
+npm install
+npm test
+npm run dev
+# (Frontend is now live at http://localhost:5173)
+
+
+--------------------------------------------------------------------------------
+PART B: MACOS AND LINUX (BASH / ZSH) SETUP COMMANDS
+--------------------------------------------------------------------------------
+
+# 1. Verify prerequisites:
+node -v
+npm -v
+python3 --version
+
+# 2. Setup Python ML Intelligence Service:
+cd ml-service
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python -m pytest
+python -m app.__init__
+# (Runs on http://localhost:5001)
+
+# 3. In a SECOND Terminal, setup API Gateway:
+cd api-gateway
+cp .env.example .env
+npm install
+npm run seed
+npm test
+npm run dev
+# (Runs on http://localhost:5000)
+
+# 4. In a THIRD Terminal, setup Frontend:
+cd frontend
+npm install
+npm test
+npm run dev
+# (Runs on http://localhost:5173)
+
+
+--------------------------------------------------------------------------------
+PART C: ONE-COMMAND DOCKER COMPOSE ALTERNATIVE
+--------------------------------------------------------------------------------
+
+# To run MongoDB, ML Service, API Gateway, and Frontend together:
+docker-compose up --build
+
+# Once up, seed the database inside the container:
+docker exec -it gramcraft-api-gateway npm run seed

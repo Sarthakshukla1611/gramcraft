@@ -1,0 +1,19 @@
+{
+  "name": "gramcraft-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GramCraft - Rural Development Planning Platform for India",
+  "scripts": {
+    "install:all": "npm install && cd api-gateway && npm install && cd ../frontend && npm install",
+    "seed": "node api-gateway/src/scripts/seed.js",
+    "dev:api": "cd api-gateway && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "test:api": "cd api-gateway && npm test",
+    "test:frontend": "cd frontend && npm test",
+    "test:ml": "cd ml-service && python -m pytest",
+    "build:frontend": "cd frontend && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

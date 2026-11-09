@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light Theme (Paper base) */
+  --color-paper-base: #F6F1E4;
+  --color-paper-muted: #ECE5D5;
+  --color-field-dark: #162922;
+  --color-panel-green: #1E3B30;
+  
+  --color-turmeric: #C4832A;
+  --color-turmeric-hover: #AA7022;
+  --color-turmeric-light: #F4E4CE;
+
+  --color-teal: #2E5A63;
+  --color-teal-light: #D6E8EB;
+
+  --color-clay: #9E3A34;
+  --color-clay-light: #F7DDD9;
+
+  --color-softgreen: #7BAE7F;
+  --color-softgreen-light: #E1EFE2;
+
+  --color-border: #D8D0BE;
+  --color-card-bg: #FFFFFF;
+  --color-card-border: #E2DAC8;
+}
+
+.dark {
+  /* Dark Theme (Field green base) */
+  --color-paper-base: #12211B;
+  --color-paper-muted: #162922;
+  --color-field-dark: #F6F1E4;
+  --color-panel-green: #1E3B30;
+
+  --color-turmeric: #DDA046;
+  --color-turmeric-hover: #E8AF5D;
+  --color-turmeric-light: #3D2D14;
+
+  --color-teal: #49828E;
+  --color-teal-light: #1A3237;
+
+  --color-clay: #C45750;
+  --color-clay-light: #441A17;
+
+  --color-softgreen: #8EC492;
+  --color-softgreen-light: #1D3720;
+
+  --color-border: #2B453A;
+  --color-card-bg: #1A3229;
+  --color-card-border: #28473A;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-paper-base);
+  color: var(--color-field-dark);
+  font-family: 'IBM Plex Sans', 'Noto Sans Devanagari', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-turmeric);
+}
+
+/* Accessible focus ring */
+*:focus-visible {
+  outline: 2px solid var(--color-turmeric);
+  outline-offset: 2px;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Leaflet dark mode overrides */
+.dark .leaflet-tile-pane {
+  filter: brightness(0.7) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.75);
+}

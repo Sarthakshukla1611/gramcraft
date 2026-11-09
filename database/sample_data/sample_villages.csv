@@ -1,0 +1,6 @@
+code,name,district,block,population,households,lat,lng,sanitation,water,education,roads,electricity,healthcare
+MP-SEH-NEW-01,Ratanpur,Sehore,Ichhawar,1850,370,22.9876,77.0234,42,55,60,48,72,39
+MP-SEH-NEW-02,Devli,Sehore,Ichhawar,2100,420,23.0012,77.0456,65,70,58,62,80,54
+MP-SEH-NEW-03,Sultanpur,Sehore,Ashta,3400,680,23.0123,76.8345,35,44,52,40,68,36
+MP-SEH-NEW-04,Mohanpur,Sehore,Ashta,1200,240,22.9812,76.8123,58,62,71,65,75,60
+MP-SEH-NEW-05,Kalyanpur,Sehore,Sehore,4100,820,23.2109,77.1023,78,82,85,76,90,74
